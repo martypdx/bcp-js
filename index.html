@@ -9,12 +9,12 @@
 <body>
     <p>See the console</p>
     <script>
-        var x = 15;
-        var y = 3;
+        var x = +prompt('What is the value of x?');
+        var y = +prompt('What is the value of y?');
         var z = x + y;
 
         if(z > 25) {
-            console.log(z);
+            console.log('big number!', z);
         }
         else if(z > 10) {
             console.log('almost! only off by', 25 - z);
@@ -25,8 +25,18 @@
     </script>
 
     <script>
-        for(var i = 0; i < 10; i++) {
-            if(i % 2 === 0) {
+        var max = +prompt('count to?');
+        var confirmed = confirm('click ok for even, cancel for odd');
+        var remainder;
+        if(confirmed) {
+            remainder = 0;
+        }
+        else {
+            remainder = 1;
+        }
+
+        for(var i = 0; i < max; i++) {
+            if(i % 2 === remainder) {
                 console.log(i);
             }
         }
